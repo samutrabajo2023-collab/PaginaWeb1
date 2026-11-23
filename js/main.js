@@ -17,11 +17,8 @@
      ------------------------------------------------------------------ */
   function p(nombre, ruta) { return { nombre: nombre, href: BASE + ruta }; }
 
-  // Imágenes de la mascota por intención (solo las que tienen ilustración)
-  var IMG_AHORRO = {
-    src: "img/cerdo-ahorro.jpg",
-    alt: "El cerdo mascota de Caja Trujillo sostiene una moneda de oro junto a una escalera de monedas."
-  };
+  // Cada imagen de la mascota se usa una sola vez en toda la página.
+  // cerdo-ahorro.jpg va en el hero (index.html); esta va en "Para tu negocio > Quiero un crédito".
   var IMG_CREDITO = {
     src: "img/cerdo-credito.jpg",
     alt: "El cerdo mascota de Caja Trujillo atiende con una sonrisa a una clienta en el mostrador de una tienda."
@@ -30,7 +27,7 @@
   var CATALOGO = {
     personas: [
       {
-        id: "ahorrar", titulo: "Quiero ahorrar", imagen: IMG_AHORRO,
+        id: "ahorrar", titulo: "Quiero ahorrar",
         resumen: "Cuentas y depósitos para guardar tu dinero y verlo crecer.",
         productos: [
           p("Crece Mujer", "cuenta-crece-mujer.html"),
@@ -45,7 +42,7 @@
         ]
       },
       {
-        id: "credito", titulo: "Quiero un crédito personal", imagen: IMG_CREDITO,
+        id: "credito", titulo: "Quiero un crédito personal",
         resumen: "Financiamiento para tus planes, con la opción que mejor se ajuste a ti.",
         productos: [
           p("Credijoya", "creditos_credijoya.html"),
@@ -105,7 +102,7 @@
     ],
     negocios: [
       {
-        id: "ahorrar", titulo: "Quiero ahorrar", imagen: IMG_AHORRO,
+        id: "ahorrar", titulo: "Quiero ahorrar",
         resumen: "Cuentas y depósitos para el dinero de tu negocio.",
         productos: [
           p("Ahorro Total Disponibilidad", "ahorros_cuenta_de_ahorros.html"),
