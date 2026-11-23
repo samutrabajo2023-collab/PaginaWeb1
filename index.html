@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="es-PE">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Caja Trujillo | Ahorra, pide un crédito y opera desde donde estés</title>
+  <meta name="description" content="Caja Municipal de Ahorro y Crédito de Trujillo. Simula tu depósito a plazo fijo, conoce nuestros ahorros y créditos, y opera desde el aplicativo, cajeros y agentes." />
+  <meta name="theme-color" content="#ff0901" />
+  <link rel="icon" href="img/logo-caja-trujillo.png" />
+  <link rel="preload" href="fonts/bricolage-grotesque-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <a class="saltar" href="#contenido">Saltar al contenido</a>
+
+  <!-- Cabecera -->
+  <header class="cabecera" id="inicio">
+    <div class="cabecera__fila contenedor">
+      <a class="cabecera__logo" href="#inicio" aria-label="Caja Trujillo, ir al inicio">
+        <img src="img/logo-caja-trujillo.png" width="150" height="52" alt="Caja Trujillo" />
+      </a>
+
+      <button class="cabecera__menu" type="button" aria-expanded="false" aria-controls="navegacion">Menú</button>
+
+      <nav class="nav" id="navegacion" aria-label="Principal">
+        <ul class="nav__lista">
+          <li><a href="#productos" data-segmento="personas">Para ti</a></li>
+          <li><a href="#productos" data-segmento="negocios">Para tu negocio</a></li>
+          <li><a href="#canales">Canales</a></li>
+          <li><a href="#seguridad">Seguridad</a></li>
+          <li><a href="#nuestra-caja">Nuestra Caja</a></li>
+        </ul>
+        <div class="nav__homebanking">
+          <a class="boton boton--sol" href="https://homebanking.cajatrujillo.com.pe/Personas/">Homebanking</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenido">
+    <!-- Hero: simulador de plazo fijo -->
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="hero__fila contenedor">
+        <div class="hero__texto">
+          <h1 id="hero-titulo">Mira cuánto gana tu dinero a plazo fijo</h1>
+          <svg class="hero__pincelada" viewBox="0 0 400 24" aria-hidden="true" focusable="false">
+            <path d="M2 15C70 6 190 2 330 6c32 1 57 2 68 0-18 7-58 8-98 9C190 18 80 21 2 15Z" />
+          </svg>
+          <p class="hero__bajada">Elige cuánto quieres depositar y por cuánto tiempo. Te mostramos el total estimado al terminar el plazo.</p>
+        </div>
+
+        <form class="simulador" id="simulador" aria-labelledby="sim-titulo" onsubmit="return false">
+          <h2 class="simulador__titulo" id="sim-titulo">Simula tu depósito a plazo fijo</h2>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="monto">¿Cuánto quieres depositar?</label>
+            <output class="campo__monto" id="monto-salida" for="monto">S/ 10,000</output>
+            <input class="rango" type="range" id="monto" name="monto" min="500" max="50000" step="500" value="10000" />
+            <div class="rango__limites" aria-hidden="true"><span>S/ 500</span><span>S/ 50,000</span></div>
+          </div>
+
+          <fieldset class="campo plazos">
+            <legend class="campo__etiqueta">¿Por cuántos meses?</legend>
+            <div class="plazos__opciones" id="plazos"></div>
+          </fieldset>
+
+          <div class="escalera" aria-hidden="true">
+            <div class="escalera__barras" id="escalera"></div>
+            <div class="escalera__ejes"><span>Mes 1</span><span id="escalera-fin">Mes 12</span></div>
+          </div>
+
+          <div class="resultado" aria-live="polite">
+            <p class="resultado__linea">Al terminar el plazo tendrías</p>
+            <p class="resultado__total" id="total">S/ 10,525</p>
+            <p class="resultado__interes" id="interes">Eso incluye S/ 525 de interés estimado.</p>
+          </div>
+
+          <div class="simulador__acciones">
+            <a class="boton boton--rojo" href="https://www.cajatrujillo.com.pe/ahorros_pfijo_.html">Ver Depósito a Plazo Fijo</a>
+            <a class="enlace-simple" href="https://zonasegura.cajatrujillo.com.pe/WebSimuladorDPF/WebSimulador.aspx">Usar el simulador oficial</a>
+          </div>
+
+          <p class="simulador__nota">Cálculo referencial con una TREA de 5.25 %, la tasa máxima de la campaña vigente. Tu tasa final depende del monto y del plazo; revísala en el tarifario.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- Trámites frecuentes -->
+    <section class="tramites contenedor" aria-labelledby="tramites-titulo">
+      <h2 id="tramites-titulo" class="titulo-seccion">Trámites que puedes hacer ahora</h2>
+      <ul class="tramites__lista">
+        <li><a href="https://www.cajatrujillo.com.pe/AbreTuCuenta"><strong>Abre tu cuenta de ahorro</strong><span>Empieza el trámite en línea.</span></a></li>
+        <li><a href="https://www.cajatrujillo.com.pe/Solicitudcredito"><strong>Solicita tu crédito</strong><span>Inicia tu solicitud.</span></a></li>
+        <li><a href="https://www.cajatrujillo.com.pe/cci/"><strong>Consulta tu CCI</strong><span>Para recibir transferencias.</span></a></li>
+        <li><a href="https://www.cajatrujillo.com.pe/ConstanciaNoAdeudo/"><strong>Descarga tu constancia de no adeudo</strong><span>Obtén el documento en línea.</span></a></li>
+        <li><a href="https://www.cajatrujillo.com.pe/bloqueo_tarjeta.html"><strong>Bloquea tu tarjeta</strong><span>Conoce el proceso paso a paso.</span></a></li>
+        <li><a href="https://www.cajatrujillo.com.pe/canaleselectronicos_reddeagencias.html"><strong>Encuentra una agencia</strong><span>Revisa direcciones y horarios.</span></a></li>
+      </ul>
+    </section>
+
+    <!-- Productos -->
+    <section class="productos" id="productos" aria-labelledby="productos-titulo">
+      <div class="contenedor">
+        <div class="productos__cabecera">
+          <h2 id="productos-titulo" class="titulo-seccion">¿Qué necesitas hoy?</h2>
+          <div class="segmentos" role="tablist" aria-label="Tipo de cliente">
+            <button class="segmentos__boton" role="tab" id="seg-personas" aria-selected="true" aria-controls="productos-panel" data-segmento="personas" type="button">Para ti</button>
+            <button class="segmentos__boton" role="tab" id="seg-negocios" aria-selected="false" aria-controls="productos-panel" data-segmento="negocios" type="button" tabindex="-1">Para tu negocio</button>
+          </div>
+        </div>
+
+        <div class="productos__cuerpo">
+          <div class="intenciones" role="tablist" aria-orientation="vertical" aria-label="Qué quieres hacer" id="intenciones"></div>
+          <div class="productos__panel" id="productos-panel" role="tabpanel" tabindex="0" aria-live="polite"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Canales -->
+    <section class="canales" id="canales" aria-labelledby="canales-titulo">
+      <div class="canales__fila contenedor">
+        <div class="canales__intro">
+          <h2 id="canales-titulo" class="titulo-seccion">Opera desde donde estés</h2>
+          <p>Elige el canal que te queda más cómodo: tu celular, un cajero, un agente cerca de casa o la web.</p>
+
+          <div class="sin-tarjeta">
+            <h3>Retira efectivo sin tarjeta</h3>
+            <p>Disponible en cajeros automáticos y en agentes Kasnet.</p>
+            <p class="sin-tarjeta__enlaces">
+              <a href="https://www.cajatrujillo.com.pe/informacion-retiro-sin-tarjeta-cajero.html">Cómo retirar en cajeros</a>
+              <a href="https://www.cajatrujillo.com.pe/informacion-retiro-sin-tarjeta-kasnet.html">Cómo retirar en Kasnet</a>
+            </p>
+          </div>
+        </div>
+
+        <ul class="canales__lista">
+          <li><a href="https://www.cajatrujillo.com.pe/canaleselectronicos_aplicativomovil.html">Aplicativo Caja Trujillo Móvil</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/homebanking_personas.html">Homebanking personas</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/homebanking_empresas.html">Homebanking empresas</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/nueva_red_cajeros.html">Cajeros automáticos</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/canaleselectronicos_cajerocorresponsal.html">Agentes corresponsales</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/informacion-yape.html">Yape</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/servicios_E-Commerce.html">Compras por internet</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/POS.html">POS para tu negocio</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/info-recaudacion-bcp-bn.html">Recaudación por BCP y Banco de la Nación</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Seguridad -->
+    <section class="seguridad contenedor" id="seguridad" aria-labelledby="seguridad-titulo">
+      <div class="seguridad__intro">
+        <h2 id="seguridad-titulo" class="titulo-seccion">Protege tu cuenta de fraudes</h2>
+        <ul class="seguridad__consejos">
+          <li>No compartas tu clave, tu token ni los códigos que recibes por mensaje.</li>
+          <li>Escribe tú mismo la dirección del sitio. No entres desde enlaces que te lleguen por mensaje o correo.</li>
+          <li>Si perdiste tu tarjeta o sospechas de un movimiento, bloquéala de inmediato.</li>
+        </ul>
+      </div>
+      <ul class="seguridad__guias">
+        <li><a href="https://www.cajatrujillo.com.pe/doc/Recomendaciones-frente-al-Phishing.pdf">Recomendaciones frente al phishing<span>PDF</span></a></li>
+        <li><a href="https://www.cajatrujillo.com.pe/doc/transparencia/Recomendaciones%20de%20Seguridad.pdf">Consejos de seguridad para canales alternativos<span>PDF</span></a></li>
+        <li><a href="https://www.cajatrujillo.com.pe/bloqueo_tarjeta.html">Proceso para bloquear tu tarjeta<span>Web</span></a></li>
+      </ul>
+    </section>
+
+    <!-- Nuestra Caja -->
+    <section class="nosotros" id="nuestra-caja" aria-labelledby="nosotros-titulo">
+      <div class="nosotros__fila contenedor">
+        <div class="nosotros__texto">
+          <h2 id="nosotros-titulo" class="titulo-seccion">Caja Municipal de Ahorro y Crédito de Trujillo</h2>
+          <p>Desde 1984 financiamos a familias y emprendedores del Perú, y cuidamos los ahorros de quienes confían en nosotros.</p>
+          <p class="nosotros__enlaces">
+            <a href="https://www.cajatrujillo.com.pe/nuestracaja_historia.html">Conoce Nuestra Caja</a>
+            <a href="https://www.cajatrujillo.com.pe/nuestracaja_BuenGobiernoCorporativo.html">Buen gobierno corporativo</a>
+            <a href="https://caja-trujillo.pandape.computrabajo.com/">Trabaja con nosotros</a>
+          </p>
+        </div>
+        <ul class="respaldo">
+          <li><strong>Tus ahorros están protegidos</strong> por el Fondo de Seguro de Depósitos.</li>
+          <li><strong>Estamos supervisados</strong> por la Superintendencia de Banca, Seguros y AFP.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    <div class="pie__fila contenedor">
+      <nav aria-label="Quiénes somos">
+        <h2 class="pie__titulo">¿Quiénes somos?</h2>
+        <ul>
+          <li><a href="https://www.cajatrujillo.com.pe/nuestracaja_historia.html">Nuestra Caja</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/nuestracaja_BuenGobiernoCorporativo.html">Buen gobierno corporativo</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/denuncias">Buzón de prácticas cuestionables</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/atencionalcliente_reclamos_procedimientos.html">Transparencia</a></li>
+          <li><a href="https://caja-trujillo.pandape.computrabajo.com/">Convocatorias vigentes</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Información de productos">
+        <h2 class="pie__titulo">Información de productos</h2>
+        <ul>
+          <li><a href="https://www.cajatrujillo.com.pe/nuestracaja_tasaycomisiones_ahorros.html">Tarifario</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/nuestracaja_formulas.html">Fórmulas</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/nuestracaja_polizas.html">Pólizas</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/nuestracaja_contratos.html">Formularios contractuales</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/simuladorCreditos/WebSimulador.aspx">Simulador de créditos</a></li>
+          <li><a href="https://zonasegura.cajatrujillo.com.pe/WebSimuladorDPF/WebSimulador.aspx">Simulador de plazo fijo</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/ClienteCF/">Validar carta fianza</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Políticas y orientación">
+        <h2 class="pie__titulo">Políticas y orientación</h2>
+        <ul>
+          <li><a href="https://www.cajatrujillo.com.pe/atencionalcliente_politicadatospersonales.html">Política de privacidad</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/doc/politicaSST.pdf">Política de seguridad y salud en el trabajo</a></li>
+          <li><a href="https://www.cajatrujillo.com.pe/doc/informativo-sobre-tratamiento-mediante-video-vigilancia.pdf">Tratamiento mediante videovigilancia</a></li>
+          <li><a href="https://www.sbs.gob.pe/usuarios/">Portal de orientación de la SBS</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="pie__legal contenedor">© <span id="anio">2026</span> Caja Municipal de Ahorro y Crédito de Trujillo S.A. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
