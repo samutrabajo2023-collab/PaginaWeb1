@@ -18,8 +18,8 @@
   function p(nombre, ruta) { return { nombre: nombre, href: BASE + ruta }; }
 
   // Cada imagen de la mascota se usa una sola vez en toda la página.
-  // cerdo-ahorro.jpg va en el hero (index.html); esta va en "Para tu negocio > Quiero un crédito".
-  var IMG_CREDITO = {
+  // cerdo-ahorro.jpg va en el hero (index.html); esta va fija en el panel de productos.
+  var IMAGEN_PANEL = {
     src: "img/cerdo-credito.jpg",
     alt: "El cerdo mascota de Caja Trujillo atiende con una sonrisa a una clienta en el mostrador de una tienda."
   };
@@ -110,7 +110,7 @@
         ]
       },
       {
-        id: "credito", titulo: "Quiero un crédito", imagen: IMG_CREDITO,
+        id: "credito", titulo: "Quiero un crédito",
         resumen: "Financiamiento para hacer crecer tu negocio.",
         productos: [
           p("+Negocios", "creditos_mas_negocios.html"),
@@ -188,10 +188,8 @@
 
     elPanel.setAttribute("aria-labelledby", "int-" + actual.id);
     elPanel.innerHTML =
-      (actual.imagen
-        ? '<img class="productos__imagen" src="' + esc(actual.imagen.src) + '" width="1200" height="897"' +
-          ' loading="lazy" alt="' + esc(actual.imagen.alt) + '">'
-        : "") +
+      '<img class="productos__imagen" src="' + esc(IMAGEN_PANEL.src) + '" width="1200" height="897"' +
+        ' loading="lazy" alt="' + esc(IMAGEN_PANEL.alt) + '">' +
       '<p class="productos__resumen">' + esc(actual.resumen) + "</p>" +
       '<ul class="productos__lista">' +
       actual.productos.map(function (pr) {
