@@ -216,6 +216,17 @@ a { color: inherit; }
   line-height: 1.5;
 }
 
+.hero__imagen {
+  display: block;
+  width: min(100%, 480px);
+  aspect-ratio: 16 / 9;
+  height: auto;
+  margin-top: 2rem;
+  border-radius: var(--radio-panel);
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+
 .simulador {
   background: var(--blanco);
   color: var(--negro);
@@ -504,6 +515,16 @@ a { color: inherit; }
 
 .productos__panel { padding-top: 0.75rem; }
 .productos__panel:focus-visible { outline-offset: 12px; }
+.productos__imagen {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: var(--radio-panel);
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  background: var(--gris);
+}
 .productos__resumen {
   max-width: 32rem;
   margin-bottom: 1.25rem;
@@ -700,6 +721,7 @@ a { color: inherit; }
     padding-bottom: 1rem;
   }
   .nav.nav--abierto { display: flex; }
+  .hero__imagen { display: none; }   /* en móvil el simulador va primero */
   .nav__lista { flex-direction: column; gap: 0.25rem; }
   .nav__homebanking { flex-direction: column; align-items: flex-start; }
 }

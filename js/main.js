@@ -17,10 +17,20 @@
      ------------------------------------------------------------------ */
   function p(nombre, ruta) { return { nombre: nombre, href: BASE + ruta }; }
 
+  // Imágenes de la mascota por intención (solo las que tienen ilustración)
+  var IMG_AHORRO = {
+    src: "img/cerdo-ahorro.jpg",
+    alt: "El cerdo mascota de Caja Trujillo sostiene una moneda de oro junto a una escalera de monedas."
+  };
+  var IMG_CREDITO = {
+    src: "img/cerdo-credito.jpg",
+    alt: "El cerdo mascota de Caja Trujillo atiende con una sonrisa a una clienta en el mostrador de una tienda."
+  };
+
   var CATALOGO = {
     personas: [
       {
-        id: "ahorrar", titulo: "Quiero ahorrar",
+        id: "ahorrar", titulo: "Quiero ahorrar", imagen: IMG_AHORRO,
         resumen: "Cuentas y depósitos para guardar tu dinero y verlo crecer.",
         productos: [
           p("Crece Mujer", "cuenta-crece-mujer.html"),
@@ -35,7 +45,7 @@
         ]
       },
       {
-        id: "credito", titulo: "Quiero un crédito personal",
+        id: "credito", titulo: "Quiero un crédito personal", imagen: IMG_CREDITO,
         resumen: "Financiamiento para tus planes, con la opción que mejor se ajuste a ti.",
         productos: [
           p("Credijoya", "creditos_credijoya.html"),
@@ -95,7 +105,7 @@
     ],
     negocios: [
       {
-        id: "ahorrar", titulo: "Quiero ahorrar",
+        id: "ahorrar", titulo: "Quiero ahorrar", imagen: IMG_AHORRO,
         resumen: "Cuentas y depósitos para el dinero de tu negocio.",
         productos: [
           p("Ahorro Total Disponibilidad", "ahorros_cuenta_de_ahorros.html"),
@@ -103,7 +113,7 @@
         ]
       },
       {
-        id: "credito", titulo: "Quiero un crédito",
+        id: "credito", titulo: "Quiero un crédito", imagen: IMG_CREDITO,
         resumen: "Financiamiento para hacer crecer tu negocio.",
         productos: [
           p("+Negocios", "creditos_mas_negocios.html"),
@@ -181,6 +191,10 @@
 
     elPanel.setAttribute("aria-labelledby", "int-" + actual.id);
     elPanel.innerHTML =
+      (actual.imagen
+        ? '<img class="productos__imagen" src="' + esc(actual.imagen.src) + '" width="1200" height="897"' +
+          ' loading="lazy" alt="' + esc(actual.imagen.alt) + '">'
+        : "") +
       '<p class="productos__resumen">' + esc(actual.resumen) + "</p>" +
       '<ul class="productos__lista">' +
       actual.productos.map(function (pr) {
